@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="photo-gallery">
+    
+
+    {% for photo in photos %}
+        <div class="photo-item">
+            <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="photo-img">
+            {% if photo.title %}
+                <p>{{ photo.title }}</p>
+            {% endif %}
+            <a href="{{ photo.image.url }}" download="{{ photo.title|default:'photo' }}.jpg" class="btn-download">Download</a>
+        </div>
+    {% empty %}
+        <p>No photos uploaded yet.</p>
+    {% endfor %}
+</div>
+
+<style>
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.photo-item {
+    width: 250px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.photo-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #1a4d6d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.btn-download:hover {
+    background-color: #c41e3a;
+}
+
+@media (max-width: 768px) {
+    .photo-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-item {
+        width: 100%;
+    }
+}
+</style>
+{% endblock %}
+

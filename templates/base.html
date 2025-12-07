@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}9ACEE – 9th Asian Conference on Earthquake Engineering{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<style>
+#flash-msg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 18px;
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#flash-msg.show {
+    opacity: 1;
+}
+</style>
+
+<body>
+    <header class="nset-header">
+        <div class="top-strip">Disaster Resilient Communities in Nepal by 2050</div>
+        
+        <div class="nav-wrapper">
+            <div class="logo-area">
+                <img src="{% static 'images/logo.png' %}" alt="9ACEE Logo">
+                <h3>9th Asian Conference on Earthquake Engineering</h3>
+            </div>
+            
+            <nav class="main-nav">
+                <div class="nav-item">
+                    <a class="nav-link" href="">About</a>
+                    <div class="dropdown">
+                        <a href="{% url 'home' %}">Home</a>
+                        <a href="{% url 'about' %}">About 9ACEE</a>
+                        <a href="{% url 'hosts' %}">Hosts</a>
+                        <a href="{% url "venue" %}">Venue</a>
+                        <a href="{% url "Accommodations" %}">Accommodations</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a class="nav-link" href="">Call for Papers</a>
+                    <div class="dropdown">
+                        <a href="{% url "themes" %}">Conference Themes and Topics</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a class="nav-link" href="">Program</a>
+                    <div class="dropdown">
+                        <a href="{% url "keynote_speaker" %}">Keynote Speakers</a>
+                        <a href="{% url "invited_speaker" %}">Invited Speakers</a>
+                        <a href="{% url "program" %}">Program</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a class="nav-link" href="">Download</a>
+                    <div class="dropdown">
+                        <a href="{% url 'paperformat' %}">Paper Format and Agenda</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+    <a class="nav-link" href="">Registration</a>
+    <div class="dropdown">
+        <a href="{% url 'fees' %}">Registration Fees</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}">My Profile</a>
+            <a href="{% url 'paper-submit' %}">Submit Abstract</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </div>
+</div>
+                
+                <div class="nav-item">
+                    <a class="nav-link" href="{% url 'photos' %}">Photos</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="{% url 'contacts' %}">Contacts</a>
+                </div>
+            </nav>
+            {% if messages %}
+<div id="flash-msg">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+</div>
+{% endif %}
+
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section logo-section">
+                <a href="https://www.nset.org.np/nset2012/#" target="_blank">
+                    <img src="{% static 'images/nset.jpg' %}" alt="NSET Logo" class="footer-logo">
+                </a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>National Society for Earthquake Technology-Nepal (NSET)</p>
+                <p>Phone: +977-1-xxxxxxx</p>
+                <a href="mailto:info@9acee.org"><p>Email: info@9acee.org</p></a>
+                <a href="https://www.google.com/maps/place/NSET/@27.6533106,85.2998424,966m/data=!3m1!1e3!4m6!3m5!1s0x39eb1788bdcaba7b:0x228de5843c5ba6e4!8m2!3d27.6533602!4d85.3025702!16s%2Fg%2F1hf3wbpx5?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <p>Address: Kathmandu, Nepal</p>
+                </a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'register' %}">Registration</a></li>
+                    <li><a href="{% url 'hosts' %}">Hosts</a></li>
+                    <li><a href="{% url 'contacts' %}">contacts</a></li>
+                    <li><a href="{% url 'venue' %}">Venue</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section social-section">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/NSET2020/" target="_blank">Facebook</a></li>
+                    <li><a href="https://x.com/NSETNepal1/status/1831180052261896638" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/company/national-society-for-earthquake-technology---nepal-nset-?originalSubdomain=np" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.youtube.com/@NSETInfoChannel" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 9th Asian Conference on Earthquake Engineering. All rights reserved.</p>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const flash = document.getElementById("flash-msg");
+    if (flash) {
+        flash.classList.add("show");
+
+        setTimeout(() => {
+            flash.classList.remove("show");
+        }, 3000);
+    }
+});
+</script>
+
+</body>
+</html>

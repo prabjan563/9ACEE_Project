@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile - 9ACEE{% endblock %}
+
+{% block content %}
+<style>
+    /* Center the section and limit width */
+    .profile-section {
+        max-width: 500px;       /* Slightly wider than login form */
+        margin: 60px auto;      /* Centers horizontally */
+        font-family: sans-serif;
+    }
+
+    /* The box design */
+    .profile-container {
+        border: 1px solid #ddd;
+        padding: 30px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    /* Titles */
+    .section-title {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .profile-container h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #444;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    /* Data rows */
+    .profile-container p {
+        margin: 12px 0;
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .profile-container strong {
+        color: #333;
+        display: inline-block;
+        width: 120px; /* Aligns the values nicely */
+    }
+
+    /* Button Styling */
+    .btn-primary {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #d9534f; /* Simple Red for Logout */
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary:hover {
+        background-color: #c9302c;
+    }
+</style>
+
+<main class="container">
+    <section class="profile-section">
+        <h2 class="section-title">My Profile</h2>
+        
+        <div class="profile-container">
+            <h3>Welcome, {{ user.first_name }} {{ user.last_name }}!</h3>
+            
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Member Since:</strong> {{ user.date_joined|date:"F d, Y" }}</p>
+            
+            <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+        </div>
+    </section>
+</main>
+{% endblock %}

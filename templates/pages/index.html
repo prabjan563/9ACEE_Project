@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}9ACEE – 9th Asian Conference on Earthquake Engineering{% endblock %}
+
+{% block content %}
+
+<div class="slider-container">
+    <div class="slider" id="slider">
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Earthquake Engineering">
+            <div class="slide-content">
+                <h2>9th Asian Conference on Earthquake Engineering</h2>
+                <p>April 7-9, 2026 | Kathmandu, Nepal</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Kathmandu Valley">
+            <div class="slide-content">
+                <h2>Historic Kathmandu</h2>
+                <p>Experience the rich culture and heritage of Nepal's capital city</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Earthquake Research">
+            <div class="slide-content">
+                <h2>Advancing Earthquake Engineering</h2>
+                <p>Join leading experts to share research and innovative practices</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Conference Venue">
+            <div class="slide-content">
+                <h2>Modern Conference Facilities</h2>
+                <p>State-of-the-art venue in the heart of Kathmandu</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slider-arrows">
+        <div class="slider-arrow prev" id="prev">&#10094;</div>
+        <div class="slider-arrow next" id="next">&#10095;</div>
+    </div>
+    
+    <div class="slider-nav" id="slider-nav">
+        <div class="slider-dot active" data-index="0"></div>
+        <div class="slider-dot" data-index="1"></div>
+        <div class="slider-dot" data-index="2"></div>
+        <div class="slider-dot" data-index="3"></div>
+    </div>
+</div>
+
+<main class="container">
+    <section id="about">
+        <h2 class="section-title">History</h2>
+        
+        <p>
+            The 9th Asia Conference on Earthquake Engineering, 9ACEE, will take place in Kathmandu, Nepal from April 7 to 9, 2026. 
+            Following the 8th ACEE held in Taipei in November 2022, it was decided to organize the 9th ACEE in Nepal with the 
+            National Society for Earthquake Technology Nepal (NSET) as the host.
+        </p>
+        
+        <p>
+            The Asia Conference on Earthquake Engineering began in 2004 through the initiative of the Association of Structural Engineers 
+            of the Philippines. It was designed to provide a regional platform for researchers, academics, and practitioners to exchange 
+            knowledge and experiences in earthquake engineering. Over the years, ACEE has been held in several Asian cities including Manila, 
+            Bangkok, Cebu, and Taipei, with each edition attracting hundreds of participants and featuring a wide range of scientific contributions.
+        </p>
+        
+        <p>
+            9ACEE in Kathmandu aims to bring together experts from across the region to share new research findings, innovative practices, and 
+            collaborative approaches that can help reduce earthquake risk in Asia's most vulnerable communities.
+        </p>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">Organizing Committee</h2>
+        <p>
+            The 9ACEE Organizing Committee is a multi-institutional body formed to guide the planning, coordination, and successful delivery of the conference.
+            Organized by the National Disaster Risk Reduction and Management Authority (NDRRMA) and held in association with the Nepal Academy of Science and Technology (NAST) and the National Society for Earthquake Technology—Nepal (NSET), the committee brings together representatives from government agencies, academic institutions, and professional organizations. 
+            It oversees program development, logistics, partnerships, and transparency in operations. By combining national expertise in engineering, geoscience, and disaster management, the committee ensures that 9ACEE reflects Nepal's commitment to earthquake resilience and supports regional and international collaboration in advancing earthquake engineering.
+        </p>
+    </section>
+    
+    <section id="important-dates">
+        <h2 class="section-title">Important Dates</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">December 1, 2025</div>
+                    <h3>Registration</h3>
+                    <p>Starting registration</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">December 1, 2025</div>
+                    <h3>Abstract Submission</h3>
+                    <p>Abstract submissions starts</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">December 31, 2025</div>
+                    <h3>Abstract Submission Deadline</h3>
+                    <p>Abstract submissions ends</p>
+                </div>
+            </div> 
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">January 31, 2026</div>
+                    <h3>Review and Notification</h3>
+                    <p>Authors will be notified of their abstract acceptance status</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">February 15, 2026</div>
+                    <h3>Second Circular</h3>
+                    <p>Second circular release</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">February 28, 2026</div>
+                    <h3>Extended Abstract/Full Paper Submission</h3>
+                    <p>Full paper submission deadline</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">March 20, 2026</div>
+                    <h3>Final Paper Submission</h3>
+                    <p>Final paper submission deadline</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">April 1, 2026</div>
+                    <h3>Final Program Circular</h3>
+                    <p>Final program release</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hosts-sponsors">
+        <div class="subsection">
+            <h3>Sponsors</h3>
+            <div class="sponsors-grid">
+                <a href="https://esewa.com.np" target="_blank" class="sponsor-logo">
+                    <img src="{% static 'images/unnamed.png' %}" alt="eSewa">
+                </a>
+
+                <a href="https://khalti.com" target="_blank" class="sponsor-logo">
+                    <img src="{% static 'images/unnamed (1).png' %}" alt="Khalti">
+                </a>
+
+                <a href="https://ntc.net.np" target="_blank" class="sponsor-logo">
+                    <img src="{% static 'images/ntc.png' %}" alt="Nepal Telecom">
+                </a>
+
+                <a href="https://ncell.axiata.com" target="_blank" class="sponsor-logo">
+                    <img src="{% static 'images/ncell.png' %}" alt="Ncell">
+                </a>
+
+                <a href="https://nepalsbi.com.np" target="_blank" class="sponsor-logo">
+                    <img src="{% static 'images/sbi.png' %}" alt="Nepal SBI Bank">
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Slider functionality
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        currentSlide = (n + slides.length) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function startSlideShow() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopSlideShow() {
+        clearInterval(slideInterval);
+    }
+
+    document.getElementById('next').addEventListener('click', () => {
+        nextSlide();
+        stopSlideShow();
+        startSlideShow();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        prevSlide();
+        stopSlideShow();
+        startSlideShow();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            stopSlideShow();
+            startSlideShow();
+        });
+    });
+
+    startSlideShow();
+</script>
+{% endblock %}

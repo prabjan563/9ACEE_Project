@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block extra_css %}
+
+<style>
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #about {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: #c41e3a;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fee-table thead {
+            background-color: #1a4d6d;
+            color: white;
+        }
+
+        .fee-table th {
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid #ddd;
+        }
+
+        .fee-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .fee-table tbody tr {
+            transition: background-color 0.3s ease;
+        }
+
+        .fee-table tbody tr:hover {
+            background-color: #d4e6f1 !important;
+        }
+
+        .fee-table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .fee-table tbody tr:nth-child(even) {
+            background-color: #e8e8e8;
+        }
+
+        .category-cell {
+            background-color: #a8a8a8;
+            color: white;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .type-cell {
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .fee-table {
+                font-size: 14px;
+            }
+
+            .fee-table th,
+            .fee-table td {
+                padding: 8px 4px;
+            }
+        }
+    </style>
+
+{% endblock %}
+ 
+
+{% block content %}
+
+<main class="container">
+    
+    <section>
+        <h2 class="section-title">Registration Fees</h2>
+
+        <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Type</th>
+                        <th>Early Bird (till Feb 28, 2026)</th>
+                        <th>Regular</th>
+                        <th>Students</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="category-cell">International</td>
+                        <td class="type-cell">Individual</td>
+                        <td>US$ 275</td>
+                        <td>US$ 300</td>
+                        <td>US$ 150</td>
+                    </tr>
+                    <tr>
+                        <td class="category-cell">SAARC Countries</td>
+                        <td class="type-cell">Individual</td>
+                        <td>US$ 150</td>
+                        <td>US$ 200</td>
+                        <td>US$ 100</td>
+                    </tr>
+                    <tr>
+                        <td class="category-cell">Domestic</td>
+                        <td class="type-cell">Individual</td>
+                        <td>NPR 10,000</td>
+                        <td>NPR 15,000</td>
+                        <td>NPR 5,000</td>
+                    </tr>
+                    <tr>
+                        <td class="category-cell">Domestic</td>
+                        <td class="type-cell">Institutional</td>
+                        <td>NPR 30,000 per participant</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        
+    </section>
+</main>
+{% endblock %}

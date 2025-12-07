@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register - 9ACEE{% endblock %}
+
+{% block content %}
+<style>
+    /* ... (Your existing simple CSS remains here) ... */
+    .auth-section {
+        max-width: 400px;
+        margin: 40px auto;
+        font-family: sans-serif;
+    }
+
+    .auth-form-container {
+        border: 1px solid #ddd;
+        padding: 20px 25px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-group input:focus {
+        border-color: #888;
+        outline: none;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 5px;
+        transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+        background-color: #555;
+    }
+
+    /* CSS for cleaner error display */
+    .form-error-list {
+        list-style: none; /* Removes bullets */
+        padding: 0;
+        margin: 0;
+    }
+    
+    .form-error-item {
+        color: #d9534f; /* Red error text */
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+    
+    .non-field-errors {
+        background-color: #fcf8f8;
+        border: 1px solid #f2dede;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+</style>
+
+<main class="container">
+    <section class="auth-section">
+        <h2 class="section-title">Register for 9ACEE</h2>
+        
+        <div class="auth-form-container">
+            <form method="post">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                <div class="non-field-errors">
+                    <ul class="form-error-list">
+                    {% for error in form.non_field_errors %}
+                        <li class="form-error-item">{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                
+                <div class="form-group">
+                    <label>Username</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <ul class="form-error-list">
+                        {% for error in form.username.errors %}
+                            <li class="form-error-item">{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label>First Name</label>
+                    {{ form.first_name }}
+                    {% if form.first_name.errors %}
+                        <ul class="form-error-list">
+                        {% for error in form.first_name.errors %}
+                            <li class="form-error-item">{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label>Last Name</label>
+                    {{ form.last_name }}
+                    {% if form.last_name.errors %}
+                        <ul class="form-error-list">
+                        {% for error in form.last_name.errors %}
+                            <li class="form-error-item">{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <ul class="form-error-list">
+                        {% for error in form.email.errors %}
+                            <li class="form-error-item">{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    {{ form.password1 }}
+                    {% if form.password1.errors %}
+                        <ul class="form-error-list">
+                        {% for error in form.password1.errors %}
+                            <li class="form-error-item">{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    {{ form.password2 }}
+                    {% if form.password2.errors %}
+                        <ul class="form-error-list">
+                        {% for error in form.password2.errors %}
+                            <li class="form-error-item">{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            
+            <p class="auth-link">
+                Already have an account? <a href="{% url 'login' %}">Login here</a>
+            </p>
+        </div>
+    </section>
+</main>
+{% endblock %}
