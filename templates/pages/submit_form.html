@@ -1,12 +1,72 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}Submit Paper{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Submit form container */
+.submit-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Input fields */
+.submit-container input[type="text"],
+.submit-container input[type="email"],
+.submit-container textarea,
+.submit-container select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Submit button */
+.submit-container button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.submit-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Labels */
+.submit-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Optional: responsive */
+@media (max-width: 768px) {
+    .submit-container {
+        padding: 20px;
+        margin: 30px 15px;
+    }
+}
+</style>
+{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2>Paper Submission Form</h2>
-    <form method="POST">
+<div class="submit-container">
+    <h2>Submit Your Paper</h2>
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit">Submit Paper</button>
     </form>
 </div>
 {% endblock %}

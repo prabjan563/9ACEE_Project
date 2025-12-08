@@ -1,24 +1,34 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
- <main class="container">
+<main class="container">
     <section id="about">
         <h2 class="section-title">Download</h2>
 
         <ul>
-            <li><a href="usec\photos\Brochure of 9ACEE(2).pdf" download>Proceedings of 9ACEE </a></li>
-            <li><a href="usec\photos\Brochure of 9ACEE(2).pdf" target="_blank">To view Proceedings of 9ACEE</a></li>
-            <li><a href="usec\photos\9ACEE Program brochure.24Nov2025.pdf" download>Program Brochure</li>
-            <li><a href="#">pass2</li>
-
-            <br>
+            <li>
+                <a href="{% static 'images/Brochure of 9ACEE(2).pdf' %}" download>
+                    Proceedings of 9ACEE
+                </a>
+            </li>
 
             <li>
-                <a href="#">Paper Template</a> (2022-02-25)
-                <ul>
-                    <li>pass3 <a href="#">pass3</li>
-                    <li>pass4<a href="#">pass4</a>.</li>
-                </ul>
+                <a href="{% static 'images/Brochure of 9ACEE(2).pdf' %}" target="_blank">
+                    To view Proceedings of 9ACEE
+                </a>
+            </li>
+
+            <li>
+                <a href="{% static 'images/9ACEE Program brochure.24Nov2025.pdf' %}" download>
+                    Program Brochure
+                </a>
+            </li>
+
+            <li>
+                <a href="{% static 'images/9ACEE Program brochure.24Nov2025.pdf' %}" target="_blank">
+                    To view Program Brochure
+                </a>
             </li>
         </ul>
 
