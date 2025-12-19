@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -240,22 +239,6 @@ html {
     padding: 0 20px;
 }
 
-section {
-    padding: 60px 20px;
-    margin: 40px 0;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.section-title {
-    font-size: 26px;
-    margin-bottom: 20px;
-    border-left: 5px solid #0b4fa8;
-    padding-left: 15px;
-    color: #1a365d;
-}
-
 h2 {
     font-size: 22px;
     margin: 25px 0 15px;
@@ -385,239 +368,196 @@ li {
     margin: 0;
 }
 
+.section-title {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
 
+.government-sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
 
+.sponsor-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 180px;
+    min-height: 120px;
+}
 
-        .section-title {
-            text-align: center;
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            position: relative;
-            padding-bottom: 20px;
-        }
+.sponsor-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #3498db, #2ecc71);
-            border-radius: 2px;
-        }
+.sponsor-logo img {
+    max-width: 150px;
+    max-height: 100px;
+    object-fit: contain;
+}
 
-        .government-sponsors {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 15px;
-        }
+.subsection {
+    margin-bottom: 50px;
+}
 
-        .sponsor-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            min-width: 180px;
-            min-height: 120px;
-        }
+.subsection h3 {
+    color: #34495e;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #3498db;
+}
 
-        .sponsor-logo:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
+.partners-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
 
-        .sponsor-logo img {
-            max-width: 150px;
-            max-height: 100px;
-            object-fit: contain;
-        }
+.partners-list li {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+}
 
-        .subsection {
-            margin-bottom: 50px;
-        }
+.partners-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
 
-        .subsection h3 {
-            color: #34495e;
-            font-size: 1.8em;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #3498db;
-        }
+.partners-list a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
 
-        .partners-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-        }
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
 
-        .partners-list li {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: 500;
-        }
-
-        .partners-list li:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .partners-list a {
-            color: white;
-            text-decoration: none;
-            display: block;
-        }
-
-        .sponsors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .sponsors-grid .sponsor-logo {
-            min-width: auto;
-            width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            .section-title {
-                font-size: 1.8em;
-            }
-
-            .subsection h3 {
-                font-size: 1.4em;
-            }
-
-            .partners-list {
-                grid-template-columns: 1fr;
-            }
-
-            .government-sponsors {
-                gap: 20px;
-            }
-        }
+.sponsors-grid .sponsor-logo {
+    min-width: auto;
+    width: 100%;
+}
 
 footer {
-        background-color: #2c3e50; /* Dark blue/grey background */
-        color: #ecf0f1; /* Light grey text */
-        padding: 50px 20px 20px;
-        font-size: 14px;
-    }
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 50px 20px 20px;
+    font-size: 14px;
+}
 
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        /* Grid Setup */
-        display: grid;
-        /* Create 4 equal columns */
-        grid-template-columns: repeat(4, 1fr);
-        /* Spacing between grid items */
-        gap: 30px;
-        margin-bottom: 40px;
-    }
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
 
-    .footer-section h3 {
-        color: #ffffff;
-        margin-bottom: 20px;
-        font-size: 18px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+.footer-section h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-    .footer-section p {
-        margin-bottom: 10px;
-        line-height: 1.6;
-    }
+.footer-section p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
 
-    /* --- Grid Item 1: Logo Specific Styles --- */
-    .logo-section {
-        display: flex;
-        align-items: center; /* Center logo vertically in its box */
-        justify-content: center; /* Center logo horizontally */
-    }
+.logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .footer-logo {
-        /* Ensure you use a PNG with a transparent background here */
-        max-width: 100%;
-        height: auto;
-        max-height: 120px; /* Setting a reasonable max height so it's not too big */
-        object-fit: contain;
-    }
+.footer-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+}
 
-    /* --- Link Styling --- */
-    .footer-section ul {
-        list-style: none;
-    }
+.footer-section ul {
+    list-style: none;
+}
 
-    .footer-section ul li {
-        margin-bottom: 12px;
-    }
+.footer-section ul li {
+    margin-bottom: 12px;
+}
 
-    .footer-section a {
-        color: #bdc3c7;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
+.footer-section a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-    /* Hover effect for links */
-    .footer-section a:hover {
-        color: #3498db; /* Change to a lighter blue on hover */
-    }
+.footer-section a:hover {
+    color: #3498db;
+}
 
-    /* --- Copyright Section --- */
-    .copyright {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        font-size: 13px;
-        color: #bdc3c7;
-    }
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    color: #bdc3c7;
+}
 
-    /* --- Responsive Design --- */
-    /* On tablets, switch to a 2x2 grid */
-    @media (max-width: 900px) {
-        .footer-content {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    /* On mobile phones, stack everything in 1 column */
-    @media (max-width: 600px) {
-        .footer-content {
-            grid-template-columns: 1fr;
-            text-align: center; /* Optional: Center text on mobile */
-        }
-        
-        /* Re-align social links to center on mobile if text is centered */
-        .social-section ul {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
 /* Responsive Design */
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .subsection h3 {
+        font-size: 1.4em;
+    }
+
+    .partners-list {
+        grid-template-columns: 1fr;
+    }
+
+    .government-sponsors {
+        gap: 20px;
+    }
+
     .logo-area h3 {
         font-size: 20px;
     }
@@ -649,10 +589,6 @@ footer {
         display: block;
     }
     
-    .section-title {
-        font-size: 22px;
-    }
-    
     .slide-content h2 {
         font-size: 22px;
     }
@@ -667,7 +603,6 @@ footer {
         font-size: 18px;
     }
     
-    /* Timeline Mobile Styles */
     .timeline::before {
         left: 30px;
     }
@@ -687,6 +622,19 @@ footer {
     
     .timeline-item:hover .timeline-marker {
         transform: translateX(-50%) scale(1.2);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-section ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
