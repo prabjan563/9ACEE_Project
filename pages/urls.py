@@ -1,14 +1,16 @@
 from django.urls import path
+from . import views 
+from django.urls import path
 from . import views
-from .views import PaperSubmissionView, download_submission
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
     path('hosts/', views.hosts, name='hosts'),
+    path('organization/', views.organization , name = 'organization'),
     path('fees/', views.fees, name='fees'),
     path('contacts/', views.contacts, name='contacts'),
     path('venue/', views.venue, name='venue'),
+    path('topics/', views.topics ,name = 'topics'),
     path('Accomodations/', views.Accommodations , name='Accommodations'),
     path('themes/', views.Conference_Themes_and_Topics, name='themes'),
     path('paperformat/', views.paperformat, name='paperformat'),
@@ -16,8 +18,13 @@ urlpatterns = [
     path('invited_speaker/', views.invited_speaker, name='invited_speaker'),
     path('keynote_speaker/', views.keynote_speaker, name='keynote_speaker'),
     path('program/', views.program , name="program"),
+    path('profile/', views.profile , name="profile"),
+    path("subscribe/", views.subscribe, name="subscribe"),
+    path("information/", views.information , name = "information"),
+    path("logout/", views.unsubscribe_session, name="logout"),
 
-    # Paper Submission URLs
-    path('paper/submit/', PaperSubmissionView.as_view(), name='paper-submit'),
-    path('paper/download/<int:pk>/', download_submission, name='paper-download'),
+
+    path("regsteration/", views.registeration , name='registeration'),
+    path("abstract/", views.abstract , name='abstract'),
+
 ]

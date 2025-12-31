@@ -1,20 +1,64 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main>
+<main class="container">
+
+<section id="about">
+        <h2 class="section-title">About ACEE</h2>
+        <h3> Background</h3>
+        
+        <p>
+            The Asia Conference on Earthquake Engineering (ACEE) was initiated to create a dedicated platform in Asia for dialogue and cooperation among earthquake engineering professionals. Since its inception, ACEE has served as a meeting point for advancing research, sharing lessons from damaging earthquakes, and translating new knowledge into safer buildings, infrastructure, and communities.
+        </p>
+
+    
+        <h3>History of ACEE</h3>
+        
+<ul class="acee-history">
+    <li><strong>1st ACEE (Manila, Philippines | Mar 5–6, 2004)</strong>
+        <p> - Hosted by the Association of Structural Engineers of the Philippines (ASEP), the inaugural ACEE established a regional forum for sharing research and practice in earthquake engineering, including seismic design, geotechnical issues, risk analysis, and disaster risk reduction.</p>
+</li>
+    <li><strong>2nd ACEE (Manila, Philippines | Mar 10–11, 2006)</strong> <p> - The second edition strengthened the ACEE network and broadened discussions toward mitigation, preparedness, and engineering solutions suited to diverse construction practices across Asia, fostering deeper collaboration among academia, industry, and public agencies.
+</p></li>
+    <li><strong>3rd ACEE (Bangkok, Thailand | Dec 1–3, 2010)
+</strong> <p> - Co-organized by ASEP, AIT, Tokyo Institute of Technology, and EIT, the Bangkok conference expanded regional participation and emphasized disaster risk reduction and capacity building through extensive technical sessions and cross-country exchange.
+</p></li>
+    <li><strong>4th ACEE (Tokyo, Japan | Mar 6–8, 2012)
+</strong> <p> - Convened jointly with the 9th International Conference on Urban Earthquake Engineering (9CUEE), and hosted by CUEE at Tokyo Institute of Technology, this edition advanced the urban resilience agenda with broad coverage of structural, geotechnical, and earthquake-induced hazard topics.
+</p></li>
+    <li><strong>5th ACEE (Taipei, Taiwan | Oct 16–18, 2014)</strong> <p> - Jointly organized by NCREE and National Taiwan University under the theme “Earthquake Engineering for Resilient Communities,” the 5th ACEE showcased major advances in resilient design, risk mitigation, and multidisciplinary earthquake engineering research and practice.
+</p></li>
+    <li><strong>6th ACEE (Cebu City, Philippines | Sep 22–24, 2016)</strong> <p> - Hosted by ASEP with the theme “Bridging Theory and Practice…,” the Cebu conference highlighted implementation-focused engineering, community resilience, and lessons learned from recent earthquakes, reinforcing the conference’s practitioner–researcher linkage.
+</p></li>
+    <li><strong>7th ACEE (Bangkok, Thailand | Nov 22–24, 2018)
+</strong> <p> - Hosted in collaboration by AIT and EIT with ASEP, the 7th ACEE further emphasized safer cities and infrastructure resilience, promoting research-to-practice dialogue on engineering solutions, governance, and disaster risk management in rapidly urbanizing contexts.
+</p></li>
+    <li><strong>8th ACEE (Taipei, Taiwan | Nov 9–11, 2022)</strong><p> - Organized as a hybrid conference under the theme “Earthquake-Resilient and Sustainable Communities,” 8ACEE reinforced ACEE’s interdisciplinary scope—spanning structural and geotechnical engineering, seismology, lifelines, and resilience planning—while continuing to grow the regional community.</p></li>
+</ul>
 
 
+        <h3>9ACEE Initiation</h3>
+        
+        <p>
+            During the 8th Asia Conference on Earthquake Engineering (8ACEE) held in Taipei (Nov 9–11, 2022), the National Society for Earthquake Technology – Nepal (NSET) proposed Nepal as the host for the next ACEE cycle, aligning the conference with reflection and learning around the 2015 Gorkha earthquake and Nepal’s broader seismic risk context.
+        </p>
+        <p>
+        Following endorsement from ACEE leadership and the wider ACEE community, NSET initiated coordination with national stakeholders and professional societies to establish a strong institutional foundation for 9ACEE. This process emphasized wide participation across government, academia, private sector, and development partners to ensure the conference supports both scientific advancement and practical implementation.
+        </p>
+        <p>
+            The National Disaster Risk Reduction and Management Authority (NDRRMA), Government of Nepal, agreed to lead the organizing effort, with NSET serving as the host institution and the ACEE community supporting technical collaboration. Committees were formed to steer governance, program development, outreach, and operations, with the overarching intent of linking earthquake engineering science to people-centered resilience outcomes.
+        
+        </p>
+        {% load static %}
+    <div class="picture_8thacee">
 
 
+        <img src="{% static 'images/8ACEE-0910.jpg' %}" alt="8th acee picture 1">
+        <img src="{% static 'images/8ACEE-3592.jpg' %}" alt="8th acee picture 2">
 
 
-
-
-
-
-
-
-
+</div>
+    </section>
     
 </main>
 {% endblock %}

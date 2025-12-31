@@ -1,0 +1,343 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    background: #f8fafc;
+    color: #1f2937;
+    line-height: 1.6;
+  }
+
+          .welcome-message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-message p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .welcome-message a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .welcome-message a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .welcome-message {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+  /* ================= NOTICE MODAL ================= */
+  .notice-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+  }
+
+  .notice-content {
+    background: #ffffff;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  }
+
+  .notice-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 12px;
+  }
+
+  .notice-body {
+    font-size: 16px;
+    color: #374151;
+  }
+
+  .notice-body img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    margin: 20px 0;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .close-notice {
+    margin-top: 30px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .close-notice:hover {
+    background: #1e40af;
+  }
+
+  /* ================= LAYOUT ================= */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+
+  section {
+    margin-bottom: 70px;
+  }
+
+  section h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-left: 4px solid #2563eb;
+    padding-left: 15px;
+  }
+
+  /* ================= POSTS ================= */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .post-card {
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .post-card-content {
+    padding: 22px;
+  }
+
+  .post-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .post-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .category {
+    background: #e0e7ff;
+    color: #1e3a8a;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .post-excerpt {
+    font-size: 15px;
+    color: #374151;
+  }
+
+  /* ================= VIDEOS ================= */
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 30px;
+  }
+
+  .video-card {
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+  }
+
+  .video-card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 22px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .video-card video {
+    width: 100%;
+    background: #000;
+  }
+
+  /* ================= EMPTY ================= */
+  .no-content {
+    text-align: center;
+    color: #6b7280;
+    padding: 50px;
+    font-size: 16px;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 768px) {
+    section h1 {
+      font-size: 26px;
+    }
+
+    .notice-content {
+      padding: 28px;
+    }
+  }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="welcome-message">
+    <p>Welcome back, {{ subscriber_name }}!</p>
+    <a href="{% url 'logout' %}">Logout</a>  <!-- Optional logout link -->
+</div>
+{% if notice %}
+<div class="notice-modal" id="noticeModal">
+  <div class="notice-content">
+    <h2>{{ notice.title }}</h2>
+    <div class="notice-body">
+      {% if notice.image %}
+        <img src="{{ notice.image.url }}" alt="{{ notice.title }}" onerror="this.style.display='none'">
+      {% endif %}
+      {{ notice.message|linebreaks }}
+    </div>
+    <button class="close-notice" id="closeNoticeBtn">Close</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const modal = document.getElementById('noticeModal');
+  const closeBtn = document.getElementById('closeNoticeBtn');
+  
+  function closeNotice() {
+    if (modal) {
+      modal.style.animation = 'fadeOut 0.3s ease-out';
+      setTimeout(function() {
+        modal.style.display = 'none';
+      }, 300);
+    }
+  }
+  
+  // Close button click
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeNotice);
+  }
+  
+  // Close when clicking outside modal
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeNotice();
+      }
+    });
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal && modal.style.display !== 'none') {
+      closeNotice();
+    }
+  });
+})();
+</script>
+{% endif %}
+
+<div class="container">
+  <section class="posts-section">
+    <h1>Latest Posts</h1>
+    <div class="posts-grid">
+      {% for post in posts %}
+      <article class="post-card">
+        {% if post.image %}
+          <img src="{{ post.image.url }}" alt="{{ post.title }}" onerror="this.style.display='none'">
+        {% endif %}
+        <div class="post-card-content">
+          <h2>{{ post.title }}</h2>
+          <div class="post-meta">
+            <span class="category">{{ post.category|title }}</span>
+            <span class="date">{{ post.created_at|date:"M d, Y" }}</span>
+          </div>
+          <p class="post-excerpt">{{ post.content|truncatewords:40 }}</p>
+        </div>
+      </article>
+      {% empty %}
+      <p class="no-content">No posts available.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="videos-section">
+    <h1>Videos</h1>
+    <div class="videos-grid">
+      {% for video in videos %}
+      <div class="video-card">
+        <h2>{{ video.title }}</h2>
+        <video controls>
+          <source src="{{ video.file.url }}" type="video/mp4">
+          Your browser does not support video.
+        </video>
+      </div>
+      {% empty %}
+      <p class="no-content">No videos available.</p>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,509 @@
+{% extends "base.html" %}
+{% block content %}
+{% block styles %}
+    <style>
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        th:first-child {
+            width: 60px;
+            text-align: center;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        td:first-child {
+            text-align: center;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: #f8f9ff;
+            transform: scale(1.01);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .role {
+            font-weight: 600;
+            color: #764ba2;
+        }
+
+        .tbc {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 22px;
+            }
+
+            th, td {
+                padding: 12px 8px;
+                font-size: 13px;
+            }
+
+            .table-wrapper {
+                padding: 10px;
+            }
+        }
+    </style>
+{% endblock styles %}
+<main class="container">
+    <section id="about">
+        <h2 class="section-title">Organization</h2>
+    </section>
+    <section id="hosts-sponsors">
+            <h3>Hosting & Leadership</h3>
+            <p>
+                The conference is hosted by NSET in close collaboration with national and international public, academic, and corporate agencies. The overall collaborative effort is led by NDRRMA.
+            </p>
+            
+            <h3> Committees</h3>
+                <strong>Organizing Committee:</strong> Leads overall planning, governance, coordination, and inter-institutional collaboration.<br>
+                <strong>Advisory Committee:</strong> Provides strategic guidance and support from senior experts and well-wishers.<br>
+                <strong>Technical Committee:</strong> Guides technical program quality, tracks, reviews, and session delivery.<br>
+<br>
+
+            <h3>9ACEE Organizing Committee</h3>
+               <div class="container">
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Members</th>
+                    <th>Affiliation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mr. Dinesh Bhatta, Chair</td>
+                    <td>EO, NDRRMA</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Dr. Rabindra Dhakal, Co-Chair</td>
+                    <td>Secretary NAST (TBC)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Prof. Amod Mani DIXIT, Convener</td>
+                    <td>President, NSET</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Mr. Surya Narayan Shrestha, Deputy Convener</td>
+                    <td>ED, NSET</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Dr. Ramesh Guragain, Deputy Convener</td>
+                    <td>Senior Earthquake Engineer</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Er. Subash Chandra Baral</td>
+                    <td>President, NEA</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Er. Krishna Singh Basnet</td>
+                    <td>President, SEANep</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Assoc. Prof. Dr. Indra Prasad Acharya</td>
+                    <td>President, Nepal Geotechnical Society</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Ar. Ishwor Lal Joshi</td>
+                    <td>President SONA</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Mr. Bhaskar Khatiwada</td>
+                    <td>President, Nepal Geological Society</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Dr. Raju Thapa</td>
+                    <td>President, DPNet Nepal</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Er. Thakur Prasad Sharma</td>
+                    <td>President SCAEF</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Er. Dr. Hare Ram Shrestha</td>
+                    <td>President SOTEN</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Mr. Khadga Bahadur Sen Oli</td>
+                    <td>President ESS</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Prof. Dr. Rajan Suwal</td>
+                    <td>Dean, Graduate School of Engineering, Mid-West University (TBC)</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Dr. Lok Bijay Adhikari</td>
+                    <td>Senior Seismologist, DMG (TBC)</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Dr. Subeg Man Bijukchhe</td>
+                    <td>Khwopa Engg College (TBC)</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Prof. Prachanda Man Singh Pradhan</td>
+                    <td>Kathmandu University (TBC)</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Dr. Ganga Lal Tuladhar</td>
+                    <td>Previous Member of Federal Parliament</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Dr. Kishor Timisina</td>
+                    <td>MBUST (TBC)</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Dr. Ganesh Kumar Jimee</td>
+                    <td>NSET/ESS</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<h3>9ACEE Advisory Committee</h3>
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Members</th>
+                <th>Affiliation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Er. Sushil Gyewali</td>
+                <td>Previous CEO, Nepal Reconstruction Authority (for the Gorkha earthquake reconstruction)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Prof. Prem Maskey</td>
+                <td>Senior Professor Emeritus, Institute of Engineering (IOE)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Prof. Gokarna Bahadur Motra</td>
+                <td>Previous Dean and Senior Structural Engineer, IOE</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Prof. Kimiro Meguro</td>
+                <td>Prof. Emeritus, Meguro Lab, UTokyo</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Prof. Netra Prakash Bhandary</td>
+                <td>Professor, Ehime University</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Prof. Dr. Bim Prasad Shrestha</td>
+                <td>Professor, Kathmandu University</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Prof. Binay Kumar Mishra</td>
+                <td>Professor, Pokhara University</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Dr. Rodolfo Jr Mendoza</td>
+                <td>Department of Civil Engineering, Gokongwei College of Engineering; De La Salle University-Manila, 2401 Taft Avenue, Malate, Manila, Philippines</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Prof. Fumio Yamazaki</td>
+                <td>Fellow, Ohsaki Research Institute, Inc.; Professor Emeritus, Chiba University; Visiting Researcher, NIED</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Prof. Andres Winston Oreta</td>
+                <td>Professor in Civil Engineering, De La Salle University, Manila, Philippines<br>Tel. +632-5244611 loc 226</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Prof. Keh-Chyuan Tsai</td>
+                <td>Prof. of Civil Engineering, National Taiwan University<br>TEL: +886.2.3366.4318</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Dr. Prof. Naveed Anwar</td>
+                <td>CEO, CSiBangkok, and Adjunct Faculty in Structural Engineering at AIT</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Prof. Pennung Warnitchai</td>
+                <td>Chair of Structural Engineering program at Asian Institute of Technology</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Dr. Ernesto Boying Q. Malicad Jr</td>
+                <td>Senior Specialist, Civil, Energy Development Corporation, Ortigas Center, Pasig City</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Prof. Rannie S Ison</td>
+                <td>President / Principal Civil/Structural Engineer at R.S. ISON & ASSOCIATES; Prof., University of the Philippines, Metro Manila, National Capital Region, Philippines</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Prof. Hiroaki Yamanaka</td>
+                <td>JAEE President, Tokyo Tech</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Prof. Junji Kiyono</td>
+                <td>Former JAEE President, Emeritus Professor of Kyoto University</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>9ACEE Technical Committee</h3>
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>S.N</th>
+                <th>Members</th>
+                <th>Affiliation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Dr. Ramesh Guragain, Chair</td>
+                <td>EO, NDRRMA</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Mr. Surya Narayan Shrestha</td>
+                <td>ED, NSET</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Assoc. Prof. Dr. Mandip Subedi</td>
+                <td>IPP, Nep Geotechnical Society</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Assoc. Prof. Dr. Bhesh Raj Thapa</td>
+                <td>Principal, UESC</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Assoc. Prof. Dr. Indra Prasad Acharya</td>
+                <td>President, Nepal Geotechnical Society</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Ar. Ishwor Lal Joshi</td>
+                <td>President SONA</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Mr. Bhaskar Khatiwada</td>
+                <td>President, Nepal Geological Society</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Dr. Raju Thapa</td>
+                <td>DPNet Nepal</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Er. Thakur Prasad Sharma</td>
+                <td>President SCAEF</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Er. Dr. Hare Ram Shrestha</td>
+                <td>President SOTEN</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Er. Khadga Bahadur Sen Oli</td>
+                <td>President ESS</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Dr. Gopi Krishna Basyal</td>
+                <td>Director, NSET</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Dr. Narayan Marasini</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Dr. Ganesh Kumar Jimee</td>
+                <td>NSET/ESS</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Mr. Amrit Shrestha</td>
+                <td>NDRRMA</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Mr. Sushil Shrestha</td>
+                <td>NDRRMA</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Mr. Rajendra Sharma</td>
+                <td>NDRRMA</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Er. Rajani Prajapati</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Dr. Shrijana Dhakal</td>
+                <td>Director, ICAS</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Er. Binaya Kumar Lamichhane</td>
+                <td>UESC/NSET</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Dr. Suresh Chaudhari</td>
+                <td>NSET</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Er. Rabin Chaulagain</td>
+                <td>NSET</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Er. Bipul Mainali</td>
+                <td>UESC</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Er. Hima Shrestha</td>
+                <td>NSET</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Er. Kirty Tiwari</td>
+                <td>NSET</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Er. Prasant Rawal</td>
+                <td>Previous NSET</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Er. Prayash Malla</td>
+                <td>NSET</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Er. Vibek Manandhar</td>
+                <td>Previously NSET</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    </section>
+</main>
+
+
+
+
+{% endblock content %}
