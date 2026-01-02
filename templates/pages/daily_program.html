@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container">
+    <section id="hosts-sponsors">
+        <div class="subsection">
+            <h3>Daily Program Schedule</h3>
+            <style>
+                .schedule-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    font-size: 14px;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                }
+                .schedule-table th {
+                    background-color: #1e3c72;
+                    color: white;
+                    padding: 12px;
+                    text-align: left;
+                    font-weight: 600;
+                }
+                .schedule-table td {
+                    padding: 10px 12px;
+                    border-bottom: 1px solid #ddd;
+                }
+                .schedule-table tr:hover {
+                    background-color: #f5f5f5;
+                    cursor: pointer;
+                }
+                .day-header {
+                    background-color: #e9ecef !important;
+                    font-weight: bold;
+                    color: #1e3c72;
+                }
+                .keynote-row {
+                    background-color: #fff3cd;
+                }
+                .lunch-row {
+                    background-color: #f8f9fa;
+                    font-style: italic;
+                }
+                .note-row {
+                    background-color: #d1ecf1;
+                    font-size: 12px;
+                }
+            </style>
+            
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Day / Date</th>
+                        <th>Time</th>
+                        <th>Session</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Day 1 -->
+                    <tr>
+                        <td>Day 1 (May 4, 2025)</td>
+                        <td>10:00 – 11:00</td>
+                        <td>Opening Session</td>
+                    </tr>
+                    <tr>
+                        <td>Day 1 (May 4, 2025)</td>
+                        <td>11:00 – 11:30</td>
+                        <td>Tea/Coffee</td>
+                    </tr>
+                    <tr class="keynote-row">
+                        <td>Day 1 (May 4, 2025)</td>
+                        <td>11:30 – 12:00</td>
+                        <td>Keynote Session 1</td>
+                    </tr>
+                    <tr>
+                        <td>Day 1 (May 4, 2025)</td>
+                        <td>12:15 – 13:30</td>
+                        <td>Parallel Technical Sessions 1, 2, 3</td>
+                    </tr>
+                    <tr class="lunch-row">
+                        <td>Day 1 (May 4, 2025)</td>
+                        <td>13:30 – 14:30</td>
+                        <td>Lunch</td>
+                    </tr>
+                    <tr>
+                        <td>Day 1 (May 4, 2025)</td>
+                        <td>14:30 – 16:00</td>
+                        <td>Parallel Technical Sessions 4, 5, 6</td>
+                    </tr>
+                    <tr>
+                        <td>Day 1 (May 4, 2025)</td>
+                        <td>16:15 – 17:30</td>
+                        <td>Parallel Technical Sessions 7, 8, 9</td>
+                    </tr>
+                    <tr class="note-row">
+                        <td colspan="3">N. B. Opening Session can be organized in the afternoon followed by a formal Conference Reception/Dinner</td>
+                    </tr>
+                    
+                    <!-- Day 2 -->
+                    <tr class="keynote-row">
+                        <td>Day 2 (May 5, 2025)</td>
+                        <td>9:00 – 10:00</td>
+                        <td>Keynote Session 2, 3</td>
+                    </tr>
+                    <tr>
+                        <td>Day 2 (May 5, 2025)</td>
+                        <td>10:00 – 10:30</td>
+                        <td>Tea/Coffee</td>
+                    </tr>
+                    <tr>
+                        <td>Day 2 (May 5, 2025)</td>
+                        <td>10:30 – 12:00</td>
+                        <td>Parallel Technical Sessions 10, 11, 12</td>
+                    </tr>
+                    <tr>
+                        <td>Day 2 (May 5, 2025)</td>
+                        <td>12:00 – 13:30</td>
+                        <td>Parallel Technical Sessions 13, 14, 15</td>
+                    </tr>
+                    <tr class="lunch-row">
+                        <td>Day 2 (May 5, 2025)</td>
+                        <td>13:30 – 14:30</td>
+                        <td>Lunch</td>
+                    </tr>
+                    <tr>
+                        <td>Day 2 (May 5, 2025)</td>
+                        <td>14:30 – 16:00</td>
+                        <td>Parallel Technical Sessions 16, 17, 18</td>
+                    </tr>
+                    <tr>
+                        <td>Day 2 (May 5, 2025)</td>
+                        <td>16:15 – 17:30</td>
+                        <td>Parallel Technical Sessions 19, 20, 21</td>
+                    </tr>
+                    
+                    <!-- Day 3 -->
+                    <tr class="keynote-row">
+                        <td>Day 3 (May 6, 2025)</td>
+                        <td>9:00 – 10:00</td>
+                        <td>Keynote Session 4, 5</td>
+                    </tr>
+                    <tr>
+                        <td>Day 3 (May 6, 2025)</td>
+                        <td>10:00 – 10:30</td>
+                        <td>Tea/Coffee</td>
+                    </tr>
+                    <tr>
+                        <td>Day 3 (May 6, 2025)</td>
+                        <td>10:30 – 12:00</td>
+                        <td>Parallel Technical Sessions 22, 23, 24</td>
+                    </tr>
+                    <tr>
+                        <td>Day 3 (May 6, 2025)</td>
+                        <td>12:00 – 13:00</td>
+                        <td>Closing Session</td>
+                    </tr>
+                    <tr class="lunch-row">
+                        <td>Day 3 (May 6, 2025)</td>
+                        <td>13:00 – 14:00</td>
+                        <td>Lunch</td>
+                    </tr>
+                    <tr>
+                        <td>Day 3 (May 6, 2025)</td>
+                        <td>14:00 onwards</td>
+                        <td>Field Visit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+        <section id="hosts-sponsors">
+        <div class="subsection">
+            <h3>Post-conference Extension of Stay</h3>
+            
+            <p>NSET will provide planning assistance to participants who wish to extend their stay in Nepal after the conference for technical visits, tourism, or coordination meetings. Guidance will be shared through the website and the Conference Secretariat.</p>
+        </div>
+    </section>
+</main>
+{% endblock %}

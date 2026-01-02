@@ -11,28 +11,27 @@
             <img src="static\images\nset.jpg" alt="logo_of_nset">
             <div class="slide-content">
                 <h2>9th Asian Conference on Earthquake Engineering</h2>
-                <p>April 7-9, 2026 | Kathmandu, Nepal</p>
+                <p> May 4–6, 2025 (२१-२३ बैशाख २०८३) | Location: Kathmandu, Nepal</p>
             </div>
         </div>
         <div class="slide">
-            <img src="static\images\NSET Building old.jpg" alt="NSET Building">
+            <img src="static\images\nsetbuilding.png" alt="NSET Building">
             <div class="slide-content">
-                <h2>Historic Kathmandu</h2>
-                <p>Experience the rich culture and heritage of Nepal's capital city</p>
+                <h2>Nset Head Office Building</h2>
             </div>
         </div>
         <div class="slide">
-            <img src="static\images\Ktm Map outline.png" alt="ktm_outline">
+            <img src="static\images\patan.jpg" alt="ktm_outline">
             <div class="slide-content">
-                <h2>Advancing Earthquake Engineering</h2>
-                <p>Join leading experts to share research and innovative practices</p>
+                <h2>Patan Durbr square</h2>
+                <p>City of Arts And Architecture</p>
             </div>
         </div>
         <div class="slide">
-            <img src="static\images\photo1.jpg" alt="valleya-img">
+            <img src="static\images\logo.png" alt="valleya-img">
             <div class="slide-content">
-                <h2>Modern Conference Facilities</h2>
-                <p>State-of-the-art venue in the heart of Kathmandu</p>
+                <h2>9Th ACEE Logo</h2>
+                <p>
             </div>
         </div>
     </div>
@@ -381,6 +380,125 @@
             height: 250px;
         }
     }
+    .video-section {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.video-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c5282;
+    margin-bottom: 40px;
+}
+
+.video-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Main Video Player - Left Side */
+.main-video {
+    flex: 0 0 65%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.main-video iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Video Playlist - Right Side */
+.video-playlist {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.video-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    background: #f7fafc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.video-item:hover {
+    background: #edf2f7;
+    border-color: #3182ce;
+    transform: translateX(5px);
+}
+
+.video-thumbnail {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.video-info {
+    flex: 1;
+}
+
+.video-info h4 {
+    font-size: 0.95rem;
+    margin: 0 0 5px 0;
+    color: #2d3748;
+    line-height: 1.3;
+}
+
+.video-info p {
+    font-size: 0.85rem;
+    color: #718096;
+    margin: 0;
+}
+
+/* Scrollbar styling for playlist */
+.video-playlist::-webkit-scrollbar {
+    width: 6px;
+}
+
+.video-playlist::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.video-playlist::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 10px;
+}
+
+.video-playlist::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .video-layout {
+        flex-direction: column;
+    }
+    
+    .main-video {
+        flex: 0 0 100%;
+    }
+    
+    .video-playlist {
+        max-height: 400px;
+    }
+}
 </style>
 
 <div>
@@ -417,91 +535,130 @@
         <div class="timeline-items">
             <div class="timeline-item">
                 <div class="timeline-dot submission"></div>
-                <h3>Abstract Submission Deadline</h3>
-                <p>Feb 28, 2026</p>
+                <h3>Abstract submission</h3>
+                <p>20 January 2026</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot submission"></div>
-                <h3>Full Paper Submission</h3>
-                <p>May 15, 2026</p>
+                <h3>Review of abstracts & notification</h3>
+                <p>30 January 2026</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot registration"></div>
-                <h3>Early Bird Registration</h3>
-                <p>Jul 15 - Oct 15, 2026</p>
+                <h3>Second circular with Registration</h3>
+                <p>30 February 2026</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot registration"></div>
-                <h3>Regular Registration</h3>
-                <p>Oct 16, 2026 Onwards</p>
+                <h3>Submission of full paper</h3>
+                <p>30 March 2026</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot conference"></div>
-                <h3>Conference Dates</h3>
-                <p>Apr 7-9, 2026</p>
+                <h3>Review and Finalzation of paper</h3>
+                <p>15 April 2026</p>
+            </div>
+                        <div class="timeline-item">
+                <div class="timeline-dot conference"></div>
+                <h3>Third/Final circular (final program, agenda & logistics)</h3>
+                <p>20 April 2026</p>
+            </div>
+                        <div class="timeline-item">
+                <div class="timeline-dot conference"></div>
+                <h3>Deasline for submission of presentation files</h3>
+                <p>30 April 2026</p>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <!-- Conference Proceedings Section -->
 <section class="proceedings-section">
     <div class="proceedings-content">
         <div class="proceedings-text">
             <h2>Conference Proceedings</h2>
-            <p>Explore the GeoMandu proceedings book and past editions.</p>
-            <a href="#" class="learn-more-btn">Open Proceedings Book</a>
+            <p>Explore the 9th Acee proceedings </p>
+            <a href="{% url 'paperformat' %}" class="learn-more-btn">Open Proceedings Book</a>
         </div>
         <div class="proceedings-image">
-            <img src="{% static 'images/proceedings-book.jpg' %}" alt="Lecture Notes in Civil Engineering">
-            <img src="{% static 'images/springer-logo.png' %}" alt="Springer Nature" style="height: 60px;">
+            <img src="{% static 'images/logo.png' %}" alt="9ACEE Conference Logo">
         </div>
     </div>
 </section>
 
+
 <!-- Video Section -->
 <section class="video-section">
-    <h2>Highlights of GeoMandu 2024</h2>
-    <div class="video-container">
-        <div class="video-main">
+    <h2>Highlights of 9th Acee </h2>
+    
+    {% if videos %}
+    <div class="video-layout">
+        <!-- Main Video Player (Left) -->
+        <div class="main-video">
             <iframe 
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                id="mainPlayer"
+                width="100%" 
+                height="100%" 
+                src="{{ videos.0.get_youtube_embed_url }}" 
+                title="{{ videos.0.title }}"
                 frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen>
             </iframe>
         </div>
-        <div class="video-sidebar">
-            <div class="video-item">
-                <div class="video-thumbnail">
-                    <img src="{% static 'images/video-thumb-1.jpg' %}" alt="Opening Ceremony">
-                </div>
+        
+        <!-- Video Thumbnails (Right) -->
+        <div class="video-playlist">
+            {% for video in videos %}
+            <div class="video-item" onclick="changeVideo('{{ video.get_youtube_embed_url }}', '{{ video.title|escapejs }}')">
+                <img src="https://img.youtube.com/vi/{{ video.get_youtube_id }}/mqdefault.jpg" 
+                     alt="{{ video.title }}" 
+                     class="video-thumbnail"
+                     onerror="this.src='{% static "images/default-thumbnail.jpg" %}'">
                 <div class="video-info">
-                    <h4>Opening Ceremony</h4>
-                    <p>GeoMandu 2024</p>
+                    <h4>{{ video.title }}</h4>
+                    <p>{{ video.description|truncatewords:5 }}</p>
                 </div>
             </div>
-            <div class="video-item">
-                <div class="video-thumbnail">
-                    <img src="{% static 'images/video-thumb-2.jpg' %}" alt="Keynote">
-                </div>
-                <div class="video-info">
-                    <h4>Dr. Marc Ballouz — Keynote</h4>
-                    <p>Featured Speaker</p>
-                </div>
-            </div>
-            <div class="video-item">
-                <div class="video-thumbnail">
-                    <img src="{% static 'images/video-thumb-3.jpg' %}" alt="Closing">
-                </div>
-                <div class="video-info">
-                    <h4>Closing Ceremony</h4>
-                    <p>GeoMandu 2024</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
+    {% else %}
+    <div style="text-align: center; padding: 40px;">
+        <p style="color: #666;">No videos available at the moment.</p>
+    </div>
+    {% endif %}
 </section>
+
+<script>
+function changeVideo(embedUrl, title) {
+    if (!embedUrl) {
+        console.error('No embed URL provided');
+        return;
+    }
+    
+    const mainPlayer = document.getElementById('mainPlayer');
+    if (mainPlayer) {
+        mainPlayer.src = embedUrl;
+        mainPlayer.title = title;
+        
+        // Scroll to video player
+        mainPlayer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+// Debug: Log video information on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const mainPlayer = document.getElementById('mainPlayer');
+    if (mainPlayer) {
+        console.log('Main player src:', mainPlayer.src);
+    }
+});
+</script>
+
 
 <main class="container">
     <section id="about">

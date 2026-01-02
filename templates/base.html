@@ -51,6 +51,7 @@
             <div class="dropdown">
               <a href="{% url 'hosts' %}">Organizers</a>
               <a href="{% url 'themes' %}">About ACEE</a>
+              <a href="{% url 'timeline' %}">Timeline</a>
             </div>
           </div>
 
@@ -71,16 +72,17 @@
           <div class="nav-item">
             <a class="nav-link" href="">Program</a>
             <div class="dropdown">
-              <a href="{% url 'keynote_speaker' %}">Keynote Speakers</a>
-              <a href="{% url 'invited_speaker' %}">Invited Speakers</a>
-              <a href="{% url 'program' %}">Program</a>
+              <a href="{% url 'conference_outline' %}">Conference Outline and Session Plan</a>
+              <a href="{% url 'daily_program' %}">Daily Program Schedule</a>
+              
             </div>
           </div>
 
           <div class="nav-item">
-            <a class="nav-link" href="">Download</a>
+            <a class="nav-link" href="">Speaker</a>
             <div class="dropdown">
-              <a href="{% url 'paperformat' %}">Paper Format and Agenda</a>
+              <a href="{% url 'keynote_speaker' %}">KeyNote Speaker</a>
+              <a href="{% url 'invited_speaker' %}">Invited Speaker</a>
             </div>
           </div>
 
@@ -122,7 +124,6 @@
         <div class="footer-section">
           <h3>Contact Information</h3>
           <p>National Society for Earthquake Technology-Nepal (NSET)</p>
-          <p>Phone: +977-1-xxxxxxx</p>
           <a href="mailto:info@9acee.org"><p>Email: info@9acee.org</p></a>
           <a href="https://www.google.com/maps/place/NSET/@27.6533106,85.2998424,966m/data=!3m1!1e3!4m6!3m5!1s0x39eb1788bdcaba7b:0x228de5843c5ba6e4!8m2!3d27.6533602!4d85.3025702!16s%2Fg%2F1hf3wbpx5?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank"><p>Address: Kathmandu, Nepal</p></a>
         </div>
@@ -181,5 +182,8 @@
         }
       })
     </script>
+
+        {% include 'includes/popup.html' %}
+
   </body>
 </html>

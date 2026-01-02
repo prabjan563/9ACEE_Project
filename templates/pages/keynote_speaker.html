@@ -1,20 +1,224 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<style>
+    .speakers-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        margin-bottom: 60px;
+    }
     
-</main>
+    .speakers-hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .speakers-hero p {
+        font-size: 1.2rem;
+        opacity: 0.95;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .speakers-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px 80px;
+    }
+    
+    .speaker-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        margin-bottom: 40px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .speaker-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .speaker-header {
+        display: flex;
+        align-items: center;
+        padding: 40px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        gap: 30px;
+    }
+    
+    .speaker-photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        flex-shrink: 0;
+    }
+    
+    .speaker-info {
+        flex: 1;
+    }
+    
+    .speaker-name {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 8px;
+    }
+    
+    .speaker-affiliation {
+        font-size: 1.1rem;
+        color: #4a5568;
+        font-style: italic;
+        margin-bottom: 0;
+    }
+    
+    .speaker-body {
+        padding: 40px;
+    }
+    
+    .talk-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #667eea;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #e2e8f0;
+    }
+    
+    .abstract-section {
+        background: #f7fafc;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+    }
+    
+    .abstract-label {
+        font-weight: 700;
+        color: #2d3748;
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        display: block;
+    }
+    
+    .abstract-text {
+        color: #4a5568;
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+    
+    .tba-badge {
+        display: inline-block;
+        background: #fef5e7;
+        color: #f39c12;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border: 2px solid #f39c12;
+    }
+    
+    .empty-state {
+        text-align: center;
+        padding: 80px 20px;
+    }
+    
+    .empty-state svg {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+        opacity: 0.3;
+    }
+    
+    .empty-state h3 {
+        font-size: 1.5rem;
+        color: #718096;
+        margin-bottom: 10px;
+    }
+    
+    .empty-state p {
+        color: #a0aec0;
+        font-size: 1.1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .speakers-hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .speaker-header {
+            flex-direction: column;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .speaker-photo {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .speaker-name {
+            font-size: 1.5rem;
+        }
+        
+        .speaker-body {
+            padding: 25px 20px;
+        }
+    }
+</style>
+
+<div class="speakers-hero">
+    <h1>Keynote Speakers</h1>
+    <p>Distinguished experts sharing groundbreaking insights and innovative perspectives</p>
+</div>
+
+<div class="speakers-container">
+    {% for speaker in speakers %}
+    <div class="speaker-card">
+        <div class="speaker-header">
+            <img src="{{ speaker.photo.url }}" alt="{{ speaker.name }}" class="speaker-photo">
+            <div class="speaker-info">
+                <h2 class="speaker-name">{{ speaker.name }}</h2>
+                <p class="speaker-affiliation">{{ speaker.affiliation }}</p>
+            </div>
+        </div>
+        
+        <div class="speaker-body">
+            {% if speaker.talk_title %}
+                <h3 class="talk-title">{{ speaker.talk_title }}</h3>
+            {% else %}
+                <div style="margin-bottom: 20px;">
+                    <span class="tba-badge">Talk Title: To Be Announced</span>
+                </div>
+            {% endif %}
+            
+            {% if speaker.abstract %}
+                <div class="abstract-section">
+                    <span class="abstract-label">Abstract</span>
+                    <p class="abstract-text">{{ speaker.abstract }}</p>
+                </div>
+            {% else %}
+                <div class="abstract-section">
+                    <span class="tba-badge">Abstract: To Be Announced</span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% empty %}
+    <div class="empty-state">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <h3>No Keynote Speakers Yet</h3>
+        <p>Stay tuned! Our distinguished speakers will be announced soon.</p>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

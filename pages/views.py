@@ -2,19 +2,17 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
-from .models import Photo , Notice , Post, Video
+from .models import Photo, Notice, Post, Video, Popup  # Added Popup here
+from .models import Venue, FieldVisit, Accommodation, Travel
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-
 from django.core.mail import send_mail
 from django.urls import reverse
 from django.conf import settings
 from .forms import SubscribeForm
+from .models import FVideo
 
-
-def home(request):
-    return render(request, 'pages/index.html')
 
 def subscribe(request):
     # Check if user is already subscribed (has session)
@@ -76,6 +74,9 @@ def organization(request):
 def fees(request):
     return render(request, 'pages/fees.html')
 
+def timeline(request):
+    return render(request, 'pages/timeline.html')
+
 def contacts(request):
     return render(request, 'pages/contacts.html')
 
@@ -83,7 +84,20 @@ def profile(request):
     return render(request , 'pages/profile.html')
 
 def venue(request):
-    return render(request , 'pages/venue.html' )
+    # Get active venue information
+    venue_info = Venue.objects.filter(is_active=True).first()
+    field_visit = FieldVisit.objects.filter(is_active=True).first()
+    accommodation = Accommodation.objects.filter(is_active=True).first()
+    travel_info = Travel.objects.filter(is_active=True).first()
+    
+    context = {
+        'venue': venue_info,
+        'field_visit': field_visit,
+        'accommodation': accommodation,
+        'travel': travel_info,
+    }
+    
+    return render(request, 'pages/venue.html', context)
 
 def topics(request):
     return render(request , 'pages/topics.html')
@@ -94,11 +108,22 @@ def Accommodations(request):
 def Conference_Themes_and_Topics(request):
     return render(request,'pages/themes.html')
 
+from django.shortcuts import render
+from .models import Speaker
+
 def keynote_speaker(request):
-    return render(request, 'pages/keynote_speaker.html')
+    speakers = Speaker.objects.filter(speaker_type='keynote', is_active=True)
+    context = {
+        'speakers': speakers
+    }
+    return render(request, 'pages/keynote_speaker.html', context)
 
 def invited_speaker(request):
-    return render(request, 'pages/invited_speaker.html')
+    speakers = Speaker.objects.filter(speaker_type='invited', is_active=True)
+    context = {
+        'speakers': speakers
+    }
+    return render(request, 'pages/invited_speaker.html', context)
 
 def program(request):
     return render(request,'pages/program.html')
@@ -110,9 +135,26 @@ def photos(request):
     all_photos = Photo.objects.all()
     return render(request, 'pages/photos.html', {'photos': all_photos})
 
+def daily_program(request):
+    return render(request, 'pages/daily_program.html' )
+
+def conference_outline(request):
+    return render(request, 'pages/conference_outline.html' )
 
 def registeration(request):
     return render(request, 'pages/registeration.html' )
 
 def abstract(request):
     return render(request, 'pages/abstract.html' )
+
+def home(request):
+    videos = FVideo.objects.filter(is_active=True)
+    
+    # Get the latest active popup
+    popup = Popup.objects.filter(is_active=True).first()
+    
+    context = {
+        'videos': videos,
+        'popup': popup,  # Added popup to context
+    }
+    return render(request, 'pages/index.html', context)
